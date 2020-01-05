@@ -30,13 +30,12 @@ There are several ways to realize this. But which way is the fastest? So I make 
 ### Output whan running `cargo bench`
 
 ```
-running 6 tests
-test a ... bench:     110,924 ns/iter (+/- 10,779)
-test b ... bench:     164,369 ns/iter (+/- 19,445)
-test c ... bench:     180,906 ns/iter (+/- 23,064)
-test d ... bench:     178,038 ns/iter (+/- 16,209)
-test e ... bench:     177,628 ns/iter (+/- 17,991)
-test f ... bench:     379,071 ns/iter (+/- 82,040)
+test a ... bench:     106,045 ns/iter (+/- 16,800)
+test b ... bench:     162,460 ns/iter (+/- 23,986)
+test c ... bench:     174,002 ns/iter (+/- 22,692)
+test d ... bench:     167,454 ns/iter (+/- 15,830)
+test e ... bench:     171,400 ns/iter (+/- 25,176)
+test f ... bench:     327,217 ns/iter (+/- 36,332)
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 6 measured
 ```
@@ -45,14 +44,14 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 6 measured
 
 | Test | About                                               | Performance (ns) lower is better | Error      |
 | ---- | --------------------------------------------------- | -------------------------------- | ---------- |
-| A    | `collect` and then `join`                           | 110,924                          | +/- 10,779 |
-| B    | `itertools::Itertools::intersperse`                 | 164,369                          | +/- 19,445 |
-| C    | `fold` (WITHOUT specifying String size)             | 180,906                          | +/- 23,064 |
-| D    | `fold` (WITH specifying String size)                | 178,038                          | +/- 16,209 |
-| E    | `fold` & `+` operator (WITH specifying String size) | 177,628                          | +/- 17,991 |
-| F    | `itertools::join`                                   | 379,071                          | +/- 82,040 |
+| A    | `collect` and then `join`                           | 106,045                          | +/- 16,800 |
+| B    | `itertools::Itertools::intersperse`                 | 162,460                          | +/- 23,986 |
+| C    | `fold` (WITHOUT specifying String size)             | 174,002                          | +/- 22,692 |
+| D    | `fold` (WITH specifying String size)                | 167,454                          | +/- 15,830 |
+| E    | `fold` & `+` operator (WITH specifying String size) | 171,400                          | +/- 25,176 |
+| F    | `itertools::join`                                   | 327,217                          | +/- 36,332 |
 
-<img width="702" alt="benchmark summary" src="https://user-images.githubusercontent.com/23649474/71775538-c8ac0180-2fc5-11ea-9ef2-45d33224d546.png">
+<img width="829" alt="benchmark" src="https://user-images.githubusercontent.com/23649474/71777106-edf93980-2fde-11ea-909f-8fbc5ab3c25b.png">
 
 ## Conclusion
 
